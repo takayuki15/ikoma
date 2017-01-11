@@ -61,6 +61,7 @@ iframe {
     border-top: 2px solid #00aeef;
     border-bottom: 2px solid rgba(119, 119, 119, 0.1) !important;
     font-size: small;
+    display: none;
 }
 .breadcrumb>li+li:before {
     color: rgba(119, 119, 119, 0.1);
@@ -119,8 +120,6 @@ iframe {
     font-family: Helvetica, sans-serif;
 }
 .logo img {    
-    width: auto !important;
-    height: 36px !important;
     max-width: initial !important;
 }
 .logo_text {
@@ -176,6 +175,16 @@ thead th, thead td {
 }
 .table-bordered-none, .table-bordered-none th, .table-bordered-none td {
     border: 0 none;
+}
+@media (min-width: 47.9em) {
+  .logo img {
+    width: 100% !important;
+  }
+}
+@media (max-width: 47.9em) {
+  .logo img {
+    height: 36px !important;
+  }
 }
 
 /* ------------------------------------
@@ -323,7 +332,7 @@ thead th, thead td {
 ------------------------------------ */
 .headline {
     border-top: 2px solid #00aeef;
-    padding: 0 0 1rem 0;
+    padding: 1rem 0;
     box-shadow: 0px 3px 6px -3px rgba(0,0,0,0.3);
     -webkit-box-shadow: 0px 3px 6px -3px rgba(0,0,0,0.3);
     -moz-box-shadow: 0px 3px 6px -3px rgba(0,0,0,0.3);
@@ -536,6 +545,7 @@ thead th, thead td {
 
 .post_meta {
     margin-bottom: 1rem;
+    display: none;
 }
 .post_time, .post_cat {
     font-size: small;
@@ -543,7 +553,7 @@ thead th, thead td {
     margin-right: .5em;
 }
 .post_body {
-    border-top: 2px solid rgba(119, 119, 119, 0.1);
+    //border-top: 2px solid rgba(119, 119, 119, 0.1);
     border-bottom: 2px solid rgba(119, 119, 119, 0.1);
     padding: 1rem 0;
     margin-bottom: 1rem;
@@ -632,7 +642,11 @@ ul.page-numbers li {
 .widget ul li {
     display: block;
     padding-left: 0;
-    border-bottom: 1px solid rgba(119, 119, 119, 0.1);
+    //border-bottom: 1px solid rgba(119, 119, 119, 0.1);
+    background-image: linear-gradient(to right, rgba(119, 119, 119, 1), rgba(119, 119, 119, 1) 1px, transparent 1px, transparent 4px);
+    background-size: 5px 1px;
+    background-position: bottom;
+    background-repeat: repeat-x;
 }
 .widget ul li ul li {
     border-bottom: 0 none;
@@ -642,11 +656,16 @@ ul.page-numbers li {
     margin-left: 1rem;
 }
 .widget ul li a {
-    padding: .5rem;
+    padding: 0 .5rem;
     display: inline-block;
+    border-right: solid 1px #fff;
+    width: 100%;
 }
-.widget_nav_menu .hidden-sm-down {
-    display: block !important;
+.widget ul li:last-child a {
+    border-right: none;
+}
+footer .widget_nav_menu .hidden-sm-down {
+    display: inline-block !important;
 }
 .sidebar .newpost a {
     display: table;
@@ -788,6 +807,7 @@ ul.post-categories a:hover, ul.tag a:hover, .page-numbers a:hover, .widget a:hov
     font-size: large;
     font-weight: bold;
     margin-bottom: 1rem;
+    display: none;
 }
 .archive .ttl_h1, .search .ttl_h1 {
     border-bottom: 2px solid #00aeef;
@@ -919,12 +939,13 @@ footer a, footer a:hover, footer a:active, footer a:visited {
     position: relative;
 }
 .searchform .search-text {
-    border-color: transparent transparent rgba(119, 119, 119, 0.1) transparent;
+    //border-color: transparent transparent rgba(119, 119, 119, 0.1) transparent;
+    border-radius: 5px;
 }
 .searchform .btn {
     position: absolute;
-    top: 1px;
-    right: 1px;
+    top: 26px;
+    right: 30px;
     background: #fff;
     color: #333;
     border: 0 none;

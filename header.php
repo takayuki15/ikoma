@@ -218,19 +218,17 @@ if ( is_single() || is_page() ){
       <div class="row">
        <div class="col-sm-6">
         <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" class="logo">
-           <?php if(get_header_image()): ?>
-            <img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>">
-           <?php else: ?>
-            <?php echo bloginfo('name'); ?>
-           <?php endif; ?>
+           <img src="<?php echo home_url(); ?>/wp-content/uploads/2017/01/logo.png"  alt="<?php bloginfo('name'); ?>" />
         </a>
        </div>
        <div class="col-sm-6">
         <div class="com">
         <?php $com_options = get_option('com_options'); ?>
         <?php if(!empty( $com_options['name']) ){ ?><div class="com_name"><?php echo $com_options['name']; ?></div><?php } ?>
-        <?php if(!empty( $com_options['tel']) ){ ?><div class="com_tel"><?php esc_html_e( 'TEL:', 'liquid-corporate' ); ?> <a id="com_tel"><?php echo $com_options['tel']; ?></a></div><?php } ?>
+        <?php if(!empty( $com_options['tel']) ){ ?><!-- <div class="com_tel"><?php esc_html_e( '', 'liquid-corporate' ); ?> <a id="com_tel"><?php echo $com_options['tel']; ?></a></div> --><?php } ?>
+        <img src="<?php echo home_url(); ?>/wp-content/uploads/2017/01/icon_tel.png" />
         <?php if(!empty( $com_options['open']) ){ ?><div class="com_open"><?php echo $com_options['open']; ?></div><?php } ?>
+        <a href="contact"><img src="<?php echo home_url(); ?>/wp-content/uploads/2017/01/btn_mail.png" /></a>
         </div>
        </div>
       </div>
@@ -261,4 +259,11 @@ if ( is_single() || is_page() ){
       <?php get_search_form(); ?>
      </div>
     </nav>
-  
+    <?php if ( is_front_page() ) { ?>
+      <div class="kv">
+        <img src="<?php echo home_url(); ?>/wp-content/uploads/2017/01/kv.png" alt="埼玉県の建設業許可申請をお考えのみなさま！"/>
+      </div>
+      <div class="kv_sp">
+        <img src="<?php echo home_url(); ?>/wp-content/uploads/2017/01/kv_sp.png" alt="埼玉県の建設業許可申請をお考えのみなさま！"/>
+    <?php } ?>
+    </div>
